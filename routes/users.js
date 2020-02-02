@@ -12,10 +12,10 @@ router.get('/users', function (req, res, next) {
 router.get('/user/:userid', function (req, res, next) {
 
 });
-router.put('/user', function (req, res, next) {
+router.put('/user/:userid', function (req, res, next) {
 
 });
-router.delete('/user', function (req, res, next) {
+router.delete('/user/:userid', function (req, res, next) {
 
 });
 module.exports = router;
