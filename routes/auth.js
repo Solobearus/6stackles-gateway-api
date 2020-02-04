@@ -19,6 +19,7 @@ router.post('/signup', function (req, res, next) {
     })
 
 });
+
 router.post('/signin', function (req, res, next) {
 
   const { email, password } = req.body;
