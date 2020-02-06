@@ -6,7 +6,7 @@ router.post('/signup', function (req, res, next) {
 
   const { name, email, password, phone } = req.body;
 
-  fetch('http://localhost:3001/signup', {
+  fetch(`http://localhost:${process.env.PORT_OF_AUTH_CONTROLLER}/signup`, {
     method: 'POST',
     body: JSON.stringify({
       name, email, password, phone
@@ -24,7 +24,7 @@ router.post('/signin', function (req, res, next) {
 
   const { email, password } = req.body;
 
-  fetch('http://localhost:3001/signin', {
+  fetch(`http://localhost:${process.env.PORT_OF_AUTH_CONTROLLER}/signin`, {
     method: 'POST',
     body: JSON.stringify({
       email, password
