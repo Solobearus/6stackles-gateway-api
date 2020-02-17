@@ -6,4 +6,4 @@
 This is the Gateway-API microservice. It gets requests from the frontend, applies authentication middleware and sends the request onwards to the correct microservice.
 
 #### For all related information about the project visit here
-- [Frontend and main Landing page](https://github.com/Solobearus/6stackles-gateway-api "API Gateway")
+- [Frontend and main Landing page](https://github.com/Solobearus/6stackles-front "Front and main landing page")
