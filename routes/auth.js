@@ -6,7 +6,7 @@ router.post('/signup', function (req, res, next) {
 
   const { name, email, password, phone } = req.body;
 
-  fetch(`http://localhost:${process.env.PORT_OF_AUTH_CONTROLLER}/signup`, {
+  fetch(`${process.env.ADRESS_OF_AUTH_CONTROLLER}/signup`, {
     method: 'POST',
     body: JSON.stringify({
       name, email, password, phone
@@ -24,7 +24,7 @@ router.post('/signin', function (req, res, next) {
 
   const { email, password } = req.body;
 
-  fetch(`http://localhost:${process.env.PORT_OF_AUTH_CONTROLLER}/signin`, {
+  fetch(`${process.env.ADRESS_OF_AUTH_CONTROLLER}/signin`, {
     method: 'POST',
     body: JSON.stringify({
       email, password
@@ -42,7 +42,7 @@ router.post('/verify', function (req, res, next) {
 
   const { token } = req.body;
 
-  fetch(`http://localhost:${process.env.PORT_OF_AUTH_CONTROLLER}/verify`, {
+  fetch(`${process.env.ADRESS_OF_AUTH_CONTROLLER}/verify`, {
     method: 'POST',
     body: JSON.stringify({
       token

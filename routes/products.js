@@ -6,7 +6,7 @@ var verify = require('../middleware/verify');
 router.get('/:productId', function (req, res, next) {
   const { productId } = req.params;
 
-  fetch(`http://localhost:${process.env.PORT_OF_PRODUCTS}/products/${productId}`)
+  fetch(`${process.env.ADRESS_OF_PRODUCTS}/products/${productId}`)
     .then(result => result.json())
     .then(result => {
       console.log(result);
@@ -18,7 +18,7 @@ router.get('/:productId', function (req, res, next) {
 
 router.post('/', verify, function (req, res, next) {
   console.log(req.body);
-  fetch(`http://localhost:${process.env.PORT_OF_PRODUCTS}/products/`, {
+  fetch(`${process.env.ADRESS_OF_PRODUCTS}/products/`, {
     method: 'POST',
     body: JSON.stringify(req.body),
     headers: { 'Content-Type': 'application/json' }
@@ -34,7 +34,7 @@ router.post('/', verify, function (req, res, next) {
 router.delete('/:productId', verify, function (req, res, next) {
   const { productId } = req.params;
 
-  fetch(`http://localhost:${process.env.PORT_OF_PRODUCTS}/products/${productId}`,
+  fetch(`${process.env.ADRESS_OF_PRODUCTS}/products/${productId}`,
     {
       method: 'DELETE',
     })
@@ -50,7 +50,7 @@ router.delete('/:productId', verify, function (req, res, next) {
 router.put('/:productId', verify, function (req, res, next) {
   const { productId } = req.params;
 
-  fetch(`http://localhost:${process.env.PORT_OF_PRODUCTS}/products/${productId}`, {
+  fetch(`${process.env.ADRESS_OF_PRODUCTS}/products/${productId}`, {
     method: 'PUT',
     body: JSON.stringify(req.body),
     headers: { 'Content-Type': 'application/json' }
@@ -66,7 +66,7 @@ router.put('/:productId', verify, function (req, res, next) {
 router.put('/:productId/image', verify, function (req, res, next) {
   const { productId } = req.params;
 
-  fetch(`http://localhost:${process.env.PORT_OF_PRODUCTS}/products/${productId}/image`, {
+  fetch(`${process.env.ADRESS_OF_PRODUCTS}/products/${productId}/image`, {
     method: 'PUT',
     body: JSON.stringify(req.body),
     headers: { 'Content-Type': 'application/json' }
@@ -83,7 +83,7 @@ router.put('/:productId/image', verify, function (req, res, next) {
 router.put('/:productId/deleteImage', verify, function (req, res, next) {
   const { productId } = req.params;
 
-  fetch(`http://localhost:${process.env.PORT_OF_PRODUCTS}/products/${productId}/deleteImage`, {
+  fetch(`${process.env.ADRESS_OF_PRODUCTS}/products/${productId}/deleteImage`, {
     method: 'PUT',
     body: JSON.stringify(req.body),
     headers: { 'Content-Type': 'application/json' }

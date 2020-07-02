@@ -2,7 +2,7 @@ var fetch = require('node-fetch');
 
 const verify = (req, res, next) => {
 
-    fetch(`http://localhost:${process.env.PORT_OF_AUTH_CONTROLLER}/verify`, {
+    fetch(`${process.env.ADRESS_OF_AUTH_CONTROLLER}/verify`, {
         method: 'POST',
         body: JSON.stringify({
             token: req.body.token
