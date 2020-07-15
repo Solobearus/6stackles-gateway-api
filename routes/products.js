@@ -3,6 +3,18 @@ var router = express.Router();
 var fetch = require('node-fetch');
 var verify = require('../middleware/verify');
 
+router.get('/', function (req, res, next) {
+
+  fetch(`${process.env.ADRESS_OF_PRODUCTS}/products`)
+    .then(result => result.json())
+    .then(result => {
+      console.log(result);
+      res.json(result);
+    })
+    .catch(err => res.status(500).json({ err: `Error:${err}` }));
+
+});
+
 router.get('/:productId', function (req, res, next) {
   const { productId } = req.params;
 

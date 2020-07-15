@@ -11,7 +11,7 @@ var productsRouter = require('./routes/products');
 require('dotenv').config();
 
 var corsOptions = {
-    origin: 'http://localhost:3004',
+    origin: `${process.env.ADRESS_OF_FRONT}`,
     optionsSuccessStatus: 200
 }
 
