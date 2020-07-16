@@ -107,6 +107,8 @@ router.put('/:productId/deleteImage', verify, function (req, res, next) {
     .catch(err => res.status(500).json({ err: `Error:${err}` }));
 
 });
+
+
 module.exports = router;
 
 

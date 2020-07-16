@@ -7,6 +7,7 @@ var cors = require('cors')
 var authRouter = require('./routes/auth');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+var categoriesRouter = require('./routes/categories');
 
 require('dotenv').config();
 
@@ -28,5 +29,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+app.use('/categories', categoriesRouter);
 
 module.exports = app;
