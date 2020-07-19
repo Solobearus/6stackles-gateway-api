@@ -108,6 +108,22 @@ router.put('/:productId/deleteImage', verify, function (req, res, next) {
 
 });
 
+router.get('/getProductByAuthorId/:authorId', verify, function (req, res, next) {
+  const { authorId } = req.params;
+
+  fetch(`${process.env.ADRESS_OF_PRODUCTS}/products/getProductByAuthorId/${authorId}`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' }
+  }).then(result => result.json())
+    .then(result => {
+      console.log(`getProductByAuthorId --- ${result}`);
+      res.json(result);
+    })
+    .catch(err => res.status(500).json({ err: `Error:${err}` }));
+
+});
+
+
 
 module.exports = router;
 
