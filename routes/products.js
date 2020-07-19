@@ -108,7 +108,7 @@ router.put('/:productId/deleteImage', verify, function (req, res, next) {
 
 });
 
-router.get('/getProductByAuthorId/:authorId', verify, function (req, res, next) {
+router.get('/getProductByAuthorId/:authorId', function (req, res, next) {
   const { authorId } = req.params;
 
   fetch(`${process.env.ADRESS_OF_PRODUCTS}/products/getProductByAuthorId/${authorId}`, {
