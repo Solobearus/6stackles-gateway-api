@@ -12,7 +12,7 @@ const verify = (req, res, next) => {
         .then(result => result.json())
         .then(result => {
             if (result.err) {
-                res.status(403).json({ err: "You are not authorized to perform this action. Please try to sign-in again." });
+                res.status(403).json({ err: result.err });
             } else {
                 req.body.userId = result._id;
                 next();
